@@ -15,10 +15,8 @@ public class ServerDeployService {
         try {
             return shellCmd("/home/ec2-user/build_deploy.sh");
         } catch (Exception e) {
-            e.printStackTrace();
+            return "error";
         }
-
-        return null;
     }
 
     public String shellCmd(String command) throws Exception {
