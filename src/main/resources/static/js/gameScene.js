@@ -28,6 +28,7 @@ class GameScene extends Phaser.Scene {
         this._drawIniter.createAnims();
         this._initInput();
         this.fire.anims.play('fireAnim1')
+        this._drawIniter.addTimer();
     }
 
     update() {
