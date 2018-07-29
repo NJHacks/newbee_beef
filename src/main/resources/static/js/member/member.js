@@ -3,18 +3,13 @@ import MemberRankConfig from "./memberRankConfig";
 
 class Member {
     constructor() {
-        //나의 레벨
-        this.level = 0;
-
         //default
         //need : 원하는 고기
         this.nowMemberList = [
-            {"idx": 0, "name" : "사원", "need" : BeefType.WELDON, "date" : new Date()},
-            {"idx": 1, "name" : "사원", "need" : BeefType.RARE, "date" : new Date()},
-            {"idx": 2, "name" : "사원", "need" : BeefType.WELDON, "date" : new Date()}
+            {"idx": 0, "name" : "사원", "score" : 5, "need" : BeefType.WELDON, "date" : new Date()},
+            {"idx": 1, "name" : "사원", "score" : 5, "need" : BeefType.RARE, "date" : new Date()},
+            {"idx": 2, "name" : "사원", "score" : 5, "need" : BeefType.WELDON, "date" : new Date()}
         ];
-
-        this.init(this.level);
     }
 
     //레벨을 보내면 해당 레벨에 맞게 자리를 다시 셋팅
@@ -28,7 +23,7 @@ class Member {
 
         this.nowMemberList = newMemberList;
 
-        //@todo UI : 자리에 바뀐 모습
+        //@todo UI : 레벨업을 하여서 사람들 바뀐 모습
     }
 
     //beefType을 보내면 해당 type에 맞는 사람을 먹이고, 점수를 보냄
@@ -56,9 +51,11 @@ class Member {
             }
         }
 
+        //@todo UI : idx번째 사람이 먹고 새로 요청 함
+        this.nowMemberList[idx].need = BeefType.randomBeefType();
+
         //@todo 경락이한테 이 스코어를 던져야함
-        //@todo UI : idx번째 사람이 먹음
-        this.nowMemberList[idx].score;
+        console.log(this.nowMemberList[idx].score);
     }
 }
 
