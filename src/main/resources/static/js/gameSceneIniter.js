@@ -11,9 +11,9 @@ GameSceneIniter = function(scene) {
         SCENE.load.spritesheet('fires', 'images/fires.png',
             { frameWidth: 297, frameHeight: 356 });
         SCENE.load.spritesheet('meatF', 'images/meatF.png',
-            { frameWidth: 474, frameHeight: 327 });
+            { frameWidth: 473, frameHeight: 327 });
         SCENE.load.spritesheet('meatB', 'images/meatB.png',
-            { frameWidth: 474, frameHeight: 327 });
+            { frameWidth: 473, frameHeight: 327 });
 
     }
 
@@ -25,11 +25,26 @@ GameSceneIniter = function(scene) {
                 .setScale(1.2)
                 .setInteractive();
 
-        SCENE.grill =
-            SCENE.physics.add.sprite(400, 200, 'grill')
-                .setName('grill')
+        SCENE.grill = [];
+        SCENE.grill[0] =
+            SCENE.physics.add.sprite(100, 200, 'grill')
+                .setName('grill1')
                 .setOrigin(0.5, 0.5)
-                .setScale(2)
+                .setScale(1)
+                .setInteractive();
+
+        SCENE.grill[1] =
+            SCENE.physics.add.sprite(400, 200, 'grill')
+                .setName('grill2')
+                .setOrigin(0.5, 0.5)
+                .setScale(1)
+                .setInteractive();
+
+        SCENE.grill[2] =
+            SCENE.physics.add.sprite(700, 200, 'grill')
+                .setName('grill3')
+                .setOrigin(0.5, 0.5)
+                .setScale(1)
                 .setInteractive();
 
         SCENE.fire =
@@ -37,10 +52,29 @@ GameSceneIniter = function(scene) {
                 .setOrigin(0.5, 1)
                 .setScale(1);
 
-        SCENE.meat =
+        SCENE.meat = [];
+        SCENE.meat[0] =
+            SCENE.add.sprite(100, 200, 'meatF')
+                .setOrigin(0.5, 0.5)
+                .setName('meat1')
+                .setScale(0.6)
+                .setVisible(false)
+                .setActive(false)
+                .setInteractive();
+
+        SCENE.meat[1] =
             SCENE.add.sprite(400, 200, 'meatF')
                 .setOrigin(0.5, 0.5)
-                .setName('meat')
+                .setName('meat2')
+                .setScale(0.6)
+                .setVisible(false)
+                .setActive(false)
+                .setInteractive();
+
+        SCENE.meat[2] =
+            SCENE.add.sprite(700, 200, 'meatF')
+                .setOrigin(0.5, 0.5)
+                .setName('meat3')
                 .setScale(0.6)
                 .setVisible(false)
                 .setActive(false)
@@ -75,14 +109,14 @@ GameSceneIniter = function(scene) {
 
         SCENE.anims.create({
             key: 'meatFAnim',
-            frames: SCENE.anims.generateFrameNumbers('meatF', { start: 0, end: 2 }),
+            frames: SCENE.anims.generateFrameNumbers('meatF', { start: 0, end: 5 }),
             frameRate: 1,
             repeat: 0
         });
 
         SCENE.anims.create({
             key: 'meatBAnim',
-            frames: SCENE.anims.generateFrameNumbers('meatB', { start: 0, end: 2 }),
+            frames: SCENE.anims.generateFrameNumbers('meatB', { start: 0, end: 5 }),
             frameRate: 1,
             repeat: 0
         });
