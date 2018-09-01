@@ -1,24 +1,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <script src="../js/phaser.min.js"></script>
-    <script src="../js/gameScene.js"></script>
-    <script src="../js/gameSceneIniter.js"></script>
-</head>
-<body>
-    <script>
-    // var gameScene = new inGameScene();
-     var config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        physics: {
-            default: 'arcade'
-        },
-        scene: new GameScene()
-    };
+    <head>
+        <script src="../js/phaser.min.js"></script>
+        <script src="../js/gameScene.js"></script>
+        <script src="../js/gameSceneIniter.js"></script>
+    </head>
+    <body>
+    <p>안녕하세요~</p>
+        <script>
+            // var gameScene = new inGameScene();
+            var config = {
+                type: Phaser.AUTO,
+                width: 800,
+                height: 600,
+                physics: {
+                    default: 'arcade'
+                },
+                scene: new GameScene()
+            };
 
-    var game = new Phaser.Game(config);    
-    </script>
-</body>
+            var game = new Phaser.Game(config);
+        </script>
+    </body>
 </html>
